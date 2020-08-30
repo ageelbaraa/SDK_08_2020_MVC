@@ -1,0 +1,6 @@
+C:\Users\User\Documents\GitHub\SDK_08_2020_MVC\CSharp\Code\SDK_08_2020_MVC_CSharp\SDK_08_2020_MVC_CSharp\bin\Debug\SDK_08_2020_MVC_CSharp.exe.config
+C:\Users\User\Documents\GitHub\SDK_08_2020_MVC\CSharp\Code\SDK_08_2020_MVC_CSharp\SDK_08_2020_MVC_CSharp\bin\Debug\SDK_08_2020_MVC_CSharp.exe
+C:\Users\User\Documents\GitHub\SDK_08_2020_MVC\CSharp\Code\SDK_08_2020_MVC_CSharp\SDK_08_2020_MVC_CSharp\bin\Debug\SDK_08_2020_MVC_CSharp.pdb
+C:\Users\User\Documents\GitHub\SDK_08_2020_MVC\CSharp\Code\SDK_08_2020_MVC_CSharp\SDK_08_2020_MVC_CSharp\obj\Debug\SDK_08_2020_MVC_CSharp.exe
+C:\Users\User\Documents\GitHub\SDK_08_2020_MVC\CSharp\Code\SDK_08_2020_MVC_CSharp\SDK_08_2020_MVC_CSharp\obj\Debug\SDK_08_2020_MVC_CSharp.pdb
+C:\Users\User\Documents\GitHub\SDK_08_2020_MVC\CSharp\Code\SDK_08_2020_MVC_CSharp\SDK_08_2020_MVC_CSharp\obj\Debug\SDK_08_2020_MVC_CSharp.csprojAssemblyReference.cache
