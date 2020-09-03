@@ -11,31 +11,31 @@ namespace ASP012019
         static void Main(string[] args)
         {
 
-            //short a = 0;
-            ////while (a < 10) 
-            ////{
-            ////    Console.WriteLine("Loopping..." + a);
-            ////    a--;
-            ////}
-
-            ////Console.WriteLine("Finally a:"+a);
-            //int d = 2, m = 3;
-
-            //for(Console.WriteLine("A"), Console.WriteLine("A1")  , a = 10; ; Console.WriteLine("C"),d++, m +=3)
+            short a = 0;
+            //while (a < 10)
             //{
-            //     Console.WriteLine("for");
+            //    Console.WriteLine("Loopping..." + a);
+            //    a--;
             //}
 
-            //Console.WriteLine("A");
-            //Console.WriteLine("A1");
-            //a = 11;
-            //while(a % 2 != 0)
+            //Console.WriteLine("Finally a:" + a);
+            int d = 2, m = 3;
+
+            //for (Console.WriteLine("A"), Console.WriteLine("A1"), a = 10; ; Console.WriteLine("C"), d++, m += 3)
             //{
-            //    a += 2;
             //    Console.WriteLine("for");
-
-            //    Console.WriteLine("C"); d++; m += 3;
             //}
+
+            Console.WriteLine("A");
+            Console.WriteLine("A1");
+            a = 11;
+            while (a % 2 != 0)
+            {
+                a += 2;
+                Console.WriteLine("for");
+
+                Console.WriteLine("C"); d++; m += 3;
+            }
 
             //d = 10;
             //while(d > 10)

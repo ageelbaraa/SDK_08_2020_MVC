@@ -33,6 +33,7 @@ namespace ASPNET022019
             Console.Write("Please enter a value:");
             int.TryParse(Console.ReadLine(), out a);
 
+
             //if (a > 0)
             //{
             //    a--;
@@ -44,6 +45,7 @@ namespace ASPNET022019
             //    a++;
             //    Console.WriteLine(a + " is a negative value");
             //}
+
 
             //int.TryParse(Console.ReadLine(), out a);
             //// 10
@@ -66,19 +68,19 @@ namespace ASPNET022019
 
 
             //
-           const  int c = 2;
+            const int c = 2;
             int m = 4;
             double d = 2;
-            a = 1;
-            switch(a)      
+            a = 5;
+            switch (a)
             {
                 default:
                     Console.WriteLine("Default");
                     break;
                 case -9:
                 // Error case m: // m is not a constant
-                case c+3:           // constant c + 3 is a constant
-                case c* -2:       // constant c + 3 is a constant
+                case c + 3:           // constant c + 3 is a constant
+                case c * -2:       // constant c + 3 is a constant
                     Console.WriteLine("First");
                     break;
                 case 3:
@@ -99,7 +101,6 @@ namespace ASPNET022019
                 else
                 {
                     if (mark < 68)
-
                         Console.WriteLine("Passed");
                     else
                     {
@@ -116,17 +117,17 @@ namespace ASPNET022019
                 }
             }
 
-            Console.WriteLine(mark < 35 || mark > 100 ? "Error" : mark < 50 ? "Failed": mark < 68 ? "Passed" : mark < 76 ? "Good" : mark < 84 ? "Very Good": "Excellent");
+            Console.WriteLine(mark < 35 || mark > 100 ? "Error" : mark < 50 ? "Failed" : mark < 68 ? "Passed" : mark < .6 ? "Good" : mark < 84 ? "Very Good" : "Excellent");
 
             Console.Write("Please enter a value:");
             int.TryParse(Console.ReadLine(), out a);
             int abs;
             if (a < 0)
-              abs = -a;
+                abs = -a;
             else
                 abs = a;
 
-            Console.WriteLine("The |a|:"+abs);
+            Console.WriteLine("The |a|:" + abs);
 
             // Error a < 0 ? -a : a;
             abs = a < 0 ? -a : a;
@@ -134,7 +135,7 @@ namespace ASPNET022019
 
             // Error : a < 0 ? Console.WriteLine(-a) : Console.WriteLine(a);
 
-            Console.WriteLine("The |a|:" +  (a < 0 ? -a : a));
+            Console.WriteLine("The |a|:" + (a < 0 ? -a : a));
 
             Console.ReadKey();
 

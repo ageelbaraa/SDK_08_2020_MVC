@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ASP012019.Formating</StartupObject>
+    <StartupObject>ASP012019.Loops</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
