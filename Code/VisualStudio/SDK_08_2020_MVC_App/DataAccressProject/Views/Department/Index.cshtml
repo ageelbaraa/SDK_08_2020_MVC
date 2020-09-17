@@ -1,0 +1,23 @@
+﻿@model DataAccressProject.Models.DEPARTMENT
+
+@using DataAccressProject.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h2>Department List</h2>
+    <ul>
+        @foreach (DEPARTMENT item in @Model)
+        {
+            <li>
+                @Html.ActionLink(item.Dname, "Index", "Employee", new { departmentID => item.Dnumber });
+            </li>
+        }
+    </ul>
+
+</div>
+

@@ -1,0 +1,21 @@
+﻿@*@model WebApplication1.Models.Employee*@
+    @using WebApplication1.Models;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="font-family:Arial">
+    <h2>Employee List</h2>
+
+    <ul>
+        @foreach (Employee employee in @Model)
+        {
+            <li>
+                @Html.ActionLink(employee.name, "Details", new { empID = employee.Id })
+            </li>
+        }
+    </ul>
+</div>
+
+

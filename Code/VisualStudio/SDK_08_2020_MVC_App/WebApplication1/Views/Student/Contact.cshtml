@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<br />
+<br />
+<br />
+
+<h3>
+    @DateTime.Now
+</h3>
+
+<br />
+<br />
+
+@{ 
+    var msg = "Hello world";
+}
+
+<p>@msg</p>
+
+@{ 
+    var description = "Hot day";
+    var time = DateTime.Now.DayOfWeek;
+    var all = "the Day is : " + time + " and it's " + description;
+}
+
+<p>@all</p>
+
+
+@for (int i = 0; i < 10; i++)
+{
+    @i.ToString() <br>
+}
+
+
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>

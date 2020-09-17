@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="AdminTables">
+      <EntityTypeMapping TypeName="Model.AdminTable">
+        <MappingFragment StoreEntitySet="AdminTable">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="AdminUserName" ColumnName="AdminUserName" />
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseInfoTables">
+      <EntityTypeMapping TypeName="Model.CourseInfoTable">
+        <MappingFragment StoreEntitySet="CourseInfoTable">
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="CName" ColumnName="CName" />
+          <ScalarProperty Name="CCcedit" ColumnName="CCcedit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseTokenByStudentTables">
+      <EntityTypeMapping TypeName="Model.CourseTokenByStudentTable">
+        <MappingFragment StoreEntitySet="CourseTokenByStudentTable">
+          <ScalarProperty Name="SCID" ColumnName="SCID" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentLoginInfoes">
+      <EntityTypeMapping TypeName="Model.StudentLoginInfo">
+        <MappingFragment StoreEntitySet="StudentLoginInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentTables">
+      <EntityTypeMapping TypeName="Model.StudentTable">
+        <MappingFragment StoreEntitySet="StudentTable">
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="SName" ColumnName="SName" />
+          <ScalarProperty Name="SBirthDate" ColumnName="SBirthDate" />
+          <ScalarProperty Name="SUserName" ColumnName="SUserName" />
+          <ScalarProperty Name="SPassword" ColumnName="SPassword" />
+          <ScalarProperty Name="SGPA" ColumnName="SGPA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

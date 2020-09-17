@@ -1,0 +1,90 @@
+﻿@model SDK_08_2020_MVC.Models.EMPLOYEE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EMPLOYEE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Minit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Minit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Emp_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Super_ssn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Super_ssn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dno)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Ssn }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

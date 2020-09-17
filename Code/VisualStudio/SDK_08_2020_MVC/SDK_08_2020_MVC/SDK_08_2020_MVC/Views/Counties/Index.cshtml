@@ -1,0 +1,19 @@
+﻿@*@model SDK_08_2020_MVC.Models.Country*@
+@using SDK_08_2020_MVC.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="font-family:Arial">
+    <h2> Countries List </h2>
+
+    <ul>
+        @foreach (Country country in @Model)
+        {
+            <li>
+                @Html.ActionLink(country.Name, "Details", new { co = country.Id })
+            </li>
+        }
+    </ul>
+</div>

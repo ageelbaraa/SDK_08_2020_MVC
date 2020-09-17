@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelEtity.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminTable">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminName" Type="nvarchar" MaxLength="500" />
+          <Property Name="AdminUserName" Type="nvarchar" MaxLength="500" />
+          <Property Name="AdminPassword" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="CourseInfoTable">
+          <Key>
+            <PropertyRef Name="CID" />
+          </Key>
+          <Property Name="CID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CName" Type="nvarchar" MaxLength="500" />
+          <Property Name="CCcedit" Type="int" />
+          <Property Name="CCID" Type="int" />
+        </EntityType>
+        <EntityType Name="CourseTokenByStudentTable">
+          <Key>
+            <PropertyRef Name="SCID" />
+          </Key>
+          <Property Name="SCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="nvarchar" MaxLength="500" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'SDK-ASP-10-2019-BasicSchoolSystem.dbo.StudentGrade' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="StudentGrade">
+          <Property Name="SID" Type="int" />
+          <Property Name="SName" Type="nvarchar" MaxLength="500" />
+          <Property Name="FirstExam" Type="float" />
+          <Property Name="SecoundExam" Type="float" />
+          <Property Name="boost" Type="float" />
+          <Property Name="FinalExam" Type="float" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+        </EntityType>-->
+        <EntityType Name="StudentLoginInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="StudentTable">
+          <Key>
+            <PropertyRef Name="SID" />
+          </Key>
+          <Property Name="SID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SName" Type="nvarchar" MaxLength="500" />
+          <Property Name="SBirthDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="SUserName" Type="nvarchar" MaxLength="500" />
+          <Property Name="SPassword" Type="nvarchar" MaxLength="500" />
+          <Property Name="SGPA" Type="nvarchar" MaxLength="50" />
+          <Property Name="SGender" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_CourseInfoTable_CourseTokenByStudentTable">
+          <End Role="CourseTokenByStudentTable" Type="Self.CourseTokenByStudentTable" Multiplicity="0..1" />
+          <End Role="CourseInfoTable" Type="Self.CourseInfoTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseTokenByStudentTable">
+              <PropertyRef Name="SCID" />
+            </Principal>
+            <Dependent Role="CourseInfoTable">
+              <PropertyRef Name="CCID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="spStudentLoginInfoCopy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spStudentLoginInfoCopy01" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="ModelEtityStoreContainer">
+          <EntitySet Name="AdminTable" EntityType="Self.AdminTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CourseInfoTable" EntityType="Self.CourseInfoTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CourseTokenByStudentTable" EntityType="Self.CourseTokenByStudentTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentLoginInfo" EntityType="Self.StudentLoginInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentTable" EntityType="Self.StudentTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CourseInfoTable_CourseTokenByStudentTable" Association="Self.FK_CourseInfoTable_CourseTokenByStudentTable">
+            <End Role="CourseTokenByStudentTable" EntitySet="CourseTokenByStudentTable" />
+            <End Role="CourseInfoTable" EntitySet="CourseInfoTable" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ModelEtity" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminTable">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AdminUserName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AdminPassword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CourseInfoTable">
+          <Key>
+            <PropertyRef Name="CID" />
+          </Key>
+          <Property Name="CID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CCcedit" Type="Int32" />
+          <Property Name="CCID" Type="Int32" />
+          <NavigationProperty Name="CourseTokenByStudentTable" Relationship="ModelEtity.FK_CourseInfoTable_CourseTokenByStudentTable" FromRole="CourseInfoTable" ToRole="CourseTokenByStudentTable" />
+        </EntityType>
+        <EntityType Name="CourseTokenByStudentTable">
+          <Key>
+            <PropertyRef Name="SCID" />
+          </Key>
+          <Property Name="SCID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StudentName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CourseInfoTables" Relationship="ModelEtity.FK_CourseInfoTable_CourseTokenByStudentTable" FromRole="CourseTokenByStudentTable" ToRole="CourseInfoTable" />
+        </EntityType>
+        <EntityType Name="StudentLoginInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="StudentTable">
+          <Key>
+            <PropertyRef Name="SID" />
+          </Key>
+          <Property Name="SID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SBirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SUserName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SPassword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SGPA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SGender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminTables" EntityType="Self.AdminTable" />
+          <EntitySet Name="CourseInfoTables" EntityType="Self.CourseInfoTable" />
+          <EntitySet Name="CourseTokenByStudentTables" EntityType="Self.CourseTokenByStudentTable" />
+          <EntitySet Name="StudentLoginInfoes" EntityType="Self.StudentLoginInfo" />
+          <EntitySet Name="StudentTables" EntityType="Self.StudentTable" />
+          <FunctionImport Name="spStudentLoginInfoCopy">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spStudentLoginInfoCopy01" />
+          <EntitySet Name="sysdiagrams" EntityType="ModelEtity.sysdiagram" />
+          <AssociationSet Name="FK_CourseInfoTable_CourseTokenByStudentTable" Association="ModelEtity.FK_CourseInfoTable_CourseTokenByStudentTable">
+            <End Role="CourseTokenByStudentTable" EntitySet="CourseTokenByStudentTables" />
+            <End Role="CourseInfoTable" EntitySet="CourseInfoTables" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_CourseInfoTable_CourseTokenByStudentTable">
+          <End Type="ModelEtity.CourseTokenByStudentTable" Role="CourseTokenByStudentTable" Multiplicity="0..1" />
+          <End Type="ModelEtity.CourseInfoTable" Role="CourseInfoTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseTokenByStudentTable">
+              <PropertyRef Name="SCID" />
+            </Principal>
+            <Dependent Role="CourseInfoTable">
+              <PropertyRef Name="CCID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelEtityStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="AdminTables">
+            <EntityTypeMapping TypeName="ModelEtity.AdminTable">
+              <MappingFragment StoreEntitySet="AdminTable">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="AdminUserName" ColumnName="AdminUserName" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseInfoTables">
+            <EntityTypeMapping TypeName="ModelEtity.CourseInfoTable">
+              <MappingFragment StoreEntitySet="CourseInfoTable">
+                <ScalarProperty Name="CCID" ColumnName="CCID" />
+                <ScalarProperty Name="CID" ColumnName="CID" />
+                <ScalarProperty Name="CName" ColumnName="CName" />
+                <ScalarProperty Name="CCcedit" ColumnName="CCcedit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseTokenByStudentTables">
+            <EntityTypeMapping TypeName="ModelEtity.CourseTokenByStudentTable">
+              <MappingFragment StoreEntitySet="CourseTokenByStudentTable">
+                <ScalarProperty Name="SCID" ColumnName="SCID" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentLoginInfoes">
+            <EntityTypeMapping TypeName="ModelEtity.StudentLoginInfo">
+              <MappingFragment StoreEntitySet="StudentLoginInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentTables">
+            <EntityTypeMapping TypeName="ModelEtity.StudentTable">
+              <MappingFragment StoreEntitySet="StudentTable">
+                <ScalarProperty Name="SGender" ColumnName="SGender" />
+                <ScalarProperty Name="SID" ColumnName="SID" />
+                <ScalarProperty Name="SName" ColumnName="SName" />
+                <ScalarProperty Name="SBirthDate" ColumnName="SBirthDate" />
+                <ScalarProperty Name="SUserName" ColumnName="SUserName" />
+                <ScalarProperty Name="SPassword" ColumnName="SPassword" />
+                <ScalarProperty Name="SGPA" ColumnName="SGPA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spStudentLoginInfoCopy" FunctionName="ModelEtity.Store.spStudentLoginInfoCopy" />
+          <FunctionImportMapping FunctionImportName="spStudentLoginInfoCopy01" FunctionName="ModelEtity.Store.spStudentLoginInfoCopy01" />
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ModelEtity.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

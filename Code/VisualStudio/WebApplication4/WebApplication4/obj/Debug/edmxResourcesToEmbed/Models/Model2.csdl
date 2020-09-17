@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdminTable">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AdminUserName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AdminPassword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CourseInfoTable">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CCcedit" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CourseTokenByStudentTable">
+    <Key>
+      <PropertyRef Name="SCID" />
+    </Key>
+    <Property Name="SCID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="StudentName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="StudentLoginInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="StudentTable">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SBirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SUserName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SPassword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SGPA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminTables" EntityType="Self.AdminTable" />
+    <EntitySet Name="CourseInfoTables" EntityType="Self.CourseInfoTable" />
+    <EntitySet Name="CourseTokenByStudentTables" EntityType="Self.CourseTokenByStudentTable" />
+    <EntitySet Name="StudentLoginInfoes" EntityType="Self.StudentLoginInfo" />
+    <EntitySet Name="StudentTables" EntityType="Self.StudentTable" />
+  </EntityContainer>
+</Schema>

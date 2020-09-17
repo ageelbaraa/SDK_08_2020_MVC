@@ -1,0 +1,54 @@
+﻿@model SDK_08_2020_MVC.Models.Country
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Country</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Iso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Iso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Iso3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Iso3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneCode)
+        </dd>
+
+    </dl>
+</div>

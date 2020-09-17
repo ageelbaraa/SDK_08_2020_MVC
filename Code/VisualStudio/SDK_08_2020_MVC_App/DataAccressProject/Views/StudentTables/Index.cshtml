@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DataAccressProject.Models.StudentTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SBirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SUserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SGPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SGender)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SBirthDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SUserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SGPA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SID })
+        </td>
+    </tr>
+}
+
+</table>

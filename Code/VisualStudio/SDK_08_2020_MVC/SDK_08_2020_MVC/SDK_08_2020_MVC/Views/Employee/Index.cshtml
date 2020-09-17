@@ -1,0 +1,19 @@
+﻿
+@using SDK_08_2020_MVC.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="font-family:Arial">
+    <h2>Employee List</h2>
+
+    <ul>
+        @foreach (EMPLOYEE employee in @Model)
+        {
+            <li>
+                @Html.ActionLink(employee.Fname, "Details", new { empID = employee.Ssn})
+            </li>
+        }
+    </ul>
+</div>
