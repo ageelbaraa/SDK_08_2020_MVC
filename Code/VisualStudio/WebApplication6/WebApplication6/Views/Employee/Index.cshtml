@@ -1,0 +1,28 @@
+﻿@model WebApplication6.Models.tblEmployee
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                @Html.DropDownListFor(m => m.DepartmnetId, new SelectList(Model.DeList, "DepartmnetId", "Dname"), "Select City")
+            </td>
+            <td>
+                @Html.TextBox("City", "Cuty")
+            </td>
+            <td>
+                <input type="button" value="Set" />
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>
+

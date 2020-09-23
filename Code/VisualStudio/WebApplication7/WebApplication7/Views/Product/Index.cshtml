@@ -1,0 +1,29 @@
+﻿@model  WebApplication7.ViewModels.RandomProductViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var className = Model.Customers.Count > 1 ? "text-success" : null;
+}
+
+<h2 class="@className">@Model.Product.Name</h2>
+
+
+@if (Model.Customers.Count == 0)
+{
+    <text> No One Rented this Product Before </text>
+}
+else
+{
+    <ul>
+        @foreach (var customer in Model.Customers)
+        {
+            <li>@customer.Name</li>
+        }
+
+    </ul>
+
+}
+

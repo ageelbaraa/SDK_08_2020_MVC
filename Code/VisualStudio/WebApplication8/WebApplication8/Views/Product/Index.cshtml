@@ -1,0 +1,34 @@
+﻿@using WebApplication8.Models
+@model WebApplication8.ViewModels.RandomProductModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@{
+    var className = Model.Customers.Count > 3 ? "text-success" : null;
+}
+
+<h2 class="@className" >@Model.Product.Name</h2>
+
+@if (Model.Customers.Count == 0)
+{
+    <text> No Customer  </text>
+}
+else
+{
+    <ul>
+        @foreach (Customer customer in Model.Customers)
+        {
+            <li>
+                @customer.Name
+            </li>
+        }
+    </ul>
+
+
+}
+
+
+
