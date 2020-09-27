@@ -10,22 +10,52 @@ namespace WebApplication8.Controllers
 {
     public class ProductController : Controller
     {
-        // GET: Product
-        public ActionResult Index()
-        {
-            var product = new Product() {Name = "Product 1"};
-            var customers = new List<Customer>()
-            {
-                new Customer(){Name = "Customer 1"} ,
-                new Customer(){Name = "Customer 2"}
-            };
+        private ApplicationDbContext _context;
 
-            var viewModel = new RandomProductModel()
+        public ProductController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+
+        // GET: Product
+        public ViewResult IndexLest()
+        {
+            //var product = new Product() {Name = "Product 1"};
+            //var customers = new List<Customer>()
+            //{
+            //    new Customer(){Name = "Customer 1"} ,
+            //    new Customer(){Name = "Customer 2"}
+            //};
+
+            //var viewModel = new RandomProductModel()
+            //{
+            //    Product = product,
+            //    Customers = customers
+            //};
+
+            var customers = GetCustomers().ToList();
+
+            RandomProductModel model = new RandomProductModel()
             {
-                Product = product,
                 Customers = customers
             };
-            return View(viewModel);
+            return View(model);
+        }
+
+        public ActionResult Detalis(int id)
+        {
+            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+            return View(customer);
+        }
+
+        private IEnumerable<Customer> GetCustomers()
+        {
+            return new List<Customer>()
+            {
+                new Customer(){Id = 1,Name = "Customer 1"} ,
+                new Customer(){Id = 2,Name = "Customer 2"}
+            };
         }
     }
 }
