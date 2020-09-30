@@ -1,5 +1,4 @@
-﻿@using WebApplication8.Models
-@model WebApplication8.ViewModels.RandomProductModel
+﻿@model IEnumerable<WebApplication8.Models.Customer>
 
 @{
     ViewBag.Title = "IndexLest";
@@ -7,14 +6,40 @@
 }
 
 <h2>IndexLest</h2>
-<lu>
-    @foreach (Customer customer in Model.Customers)
-    {
-        <li>
-            @Html.ActionLink(customer.Name,"Detalis","Product",new{id = customer.Id},null)
-        </li>
-      
-    }
-</lu>
+@if (!Model.Any())
+{
+    <text>We Do not Have Any Recourd Sorry</text>
+}
+else
+{
+    <table class="table table-bordered table-hover ">
+        <thead>
+        <tr>
+            <th>
+                Customer
+            </th>
+            <th>
+               DiscountRate
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(customer.Name, "Detalis", "Product", new { id = customer.Id }, null)
+                </td>
+                <td>
+                    @customer.MemberShipTypes.DiscountRate
+                </td>
+            </tr>
+        }
+
+        </tbody>
+    </table>
+   
+}
+
 
 

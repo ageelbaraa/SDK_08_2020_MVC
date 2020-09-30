@@ -178,12 +178,29 @@
     <Compile Include="Migrations\202009271328179_InitioalModel.Designer.cs">
       <DependentUpon>202009271328179_InitioalModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009281140099_AddIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\202009281140099_AddIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>202009281140099_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009281202409_AddMemberShipTypes.cs" />
+    <Compile Include="Migrations\202009281202409_AddMemberShipTypes.Designer.cs">
+      <DependentUpon>202009281202409_AddMemberShipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009281205370_PopulateMemberShipTypes.cs" />
+    <Compile Include="Migrations\202009281205370_PopulateMemberShipTypes.Designer.cs">
+      <DependentUpon>202009281205370_PopulateMemberShipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009301154355_ApplyAnnotationsToCustmerName.cs" />
+    <Compile Include="Migrations\202009301154355_ApplyAnnotationsToCustmerName.Designer.cs">
+      <DependentUpon>202009301154355_ApplyAnnotationsToCustmerName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MemberShipTypes.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -268,6 +285,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202009271328179_InitioalModel.resx">
       <DependentUpon>202009271328179_InitioalModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009281140099_AddIsSubscribedToCustomer.resx">
+      <DependentUpon>202009281140099_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009281202409_AddMemberShipTypes.resx">
+      <DependentUpon>202009281202409_AddMemberShipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009281205370_PopulateMemberShipTypes.resx">
+      <DependentUpon>202009281205370_PopulateMemberShipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009301154355_ApplyAnnotationsToCustmerName.resx">
+      <DependentUpon>202009301154355_ApplyAnnotationsToCustmerName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

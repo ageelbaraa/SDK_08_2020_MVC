@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -17,35 +18,59 @@ namespace WebApplication8.Controllers
             _context = new ApplicationDbContext();
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
         // GET: Product
-        public ViewResult IndexLest()
+        public ActionResult IndexLest()
         {
-            //var product = new Product() {Name = "Product 1"};
-            //var customers = new List<Customer>()
-            //{
-            //    new Customer(){Name = "Customer 1"} ,
-            //    new Customer(){Name = "Customer 2"}
-            //};
 
-            //var viewModel = new RandomProductModel()
-            //{
-            //    Product = product,
-            //    Customers = customers
-            //};
+            var customers = _context.Customers.Include(c => c.MemberShipTypes).ToList();
+
+            return View(customers);
+
+
+            /*
+            var product = new Product() { Name = "Product 1" };
+            var customers = new List<Customer>()
+            {
+                new Customer(){Name = "Customer 1"} ,
+                new Customer(){Name = "Customer 2"}
+            };
+
+            var viewModel = new RandomProductModel()
+            {
+                Product = product,
+                Customers = customers
+            };
 
             var customers = GetCustomers().ToList();
 
-            RandomProductModel model = new RandomProductModel()
-            {
-                Customers = customers
-            };
-            return View(model);
+             */
+
+            //if (customers == null)
+            //{
+            //    return HttpNotFound();
+            //}
+
+            //RandomProductModel model = new RandomProductModel()
+            //{
+            //    Customers = customers
+            //};
+
         }
 
         public ActionResult Detalis(int id)
         {
-            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+            //var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(customer);
         }
 

@@ -98,9 +98,12 @@ C:\Users\User\source\repos\WebApplication8\WebApplication8\bin\Microsoft.Owin.Se
 C:\Users\User\source\repos\WebApplication8\WebApplication8\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\User\source\repos\WebApplication8\WebApplication8\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\User\source\repos\WebApplication8\WebApplication8\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.csprojAssemblyReference.cache
+C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.Migrations.InitioalModel.resources
+C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.Migrations.AddIsSubscribedToCustomer.resources
+C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.Migrations.AddMemberShipTypes.resources
+C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.Migrations.PopulateMemberShipTypes.resources
+C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.Migrations.ApplyAnnotationsToCustmerName.resources
+C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.csproj.GenerateResource.cache
 C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.csproj.CopyComplete
 C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.dll
 C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.pdb
-C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.Migrations.InitioalModel.resources
-C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.csproj.GenerateResource.cache
