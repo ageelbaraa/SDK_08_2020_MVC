@@ -62,6 +62,17 @@ namespace WebApplication8.Controllers
 
         }
 
+        public ActionResult New()
+        {
+            var memberShipTypes = _context.MemberShipTypeses.ToList();
+            var viewModel = new NewCustomerViewModel()
+            {
+                MemberShipTypeses = memberShipTypes
+                
+            };
+            return View(viewModel);
+        }
+
         public ActionResult Detalis(int id)
         {
             //var customer = GetCustomers().SingleOrDefault(c => c.Id == id);

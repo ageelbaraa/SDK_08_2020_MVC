@@ -107,3 +107,6 @@ C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplicat
 C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.csproj.CopyComplete
 C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.dll
 C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.pdb
+C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.csprojAssemblyReference.cache
+C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.Migrations.InitioalModel1.resources
+C:\Users\User\source\repos\WebApplication8\WebApplication8\obj\Debug\WebApplication8.Migrations.AddMemberShipTypes1.resources

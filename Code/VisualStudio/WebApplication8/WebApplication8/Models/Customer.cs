@@ -16,8 +16,10 @@ namespace WebApplication8.Models
         public bool IsSubscribedToNewLetter { get; set; }
 
         public MemberShipTypes MemberShipTypes { get; set; }
-
+        [Display(Name = "Member Ship Type")]
         public byte MemberShipTypeId { get; set; }
+        [Display(Name = "Date Of Birth")]
+        public DateTime? Birthdate { get; set; }
 
 
     }
