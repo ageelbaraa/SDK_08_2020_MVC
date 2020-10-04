@@ -9,28 +9,33 @@
 @using (Html.BeginForm("Create", "Product"))
 {
     <div class="form-group">
-        @Html.LabelFor(m => m.Customer.Name)
-        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customer.Name)
+            @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customer.Birthdate)
+            @Html.TextBoxFor(m => m.Customer.Birthdate, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label class="checkbox">
+                @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewLetter) IsSubscribedToNewLetter
+            </label>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customer.MemberShipTypeId)
+            @Html.DropDownListFor(m => m.Customer.MemberShipTypeId,
+                new SelectList(Model.MemberShipTypeses,"Id","Name"),"Select Member Ship Type", new { @class = "form-control" })
+        </div>
+        
+        <button type="submit"  class="btn btn-primary">Save</button>
+
+
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Customer.Birthdate)
-        @Html.TextBoxFor(m => m.Customer.Birthdate, new { @class = "form-control" })
-    </div>
-
-    <div class="form-group">
-        <label class="checkbox">
-            @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewLetter) Check me out
-        </label>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Customer.MemberShipTypeId)
-        @Html.DropDownListFor(m => m.Customer.MemberShipTypeId,
-            new SelectList(Model.MemberShipTypeses,"Id","Name"),"Select Member Ship Type", new { @class = "form-control" })
-    </div>
-
-
+  
 
 
 

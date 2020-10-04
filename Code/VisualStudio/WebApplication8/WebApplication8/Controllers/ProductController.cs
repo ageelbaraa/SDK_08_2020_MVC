@@ -73,6 +73,19 @@ namespace WebApplication8.Controllers
             return View(viewModel);
         }
 
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+
+
+            return RedirectToAction("IndexLest", "Product");
+        }
+
+      
+
         public ActionResult Detalis(int id)
         {
             //var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
