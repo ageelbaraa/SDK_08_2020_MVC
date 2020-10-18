@@ -1,4 +1,4 @@
-namespace Vidly.Migrations
+namespace WebAppltiction8.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

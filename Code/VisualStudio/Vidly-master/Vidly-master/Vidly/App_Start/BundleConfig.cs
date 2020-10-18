@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Vidly
+namespace WebAppltiction8
 {
     public class BundleConfig
     {
@@ -24,7 +24,7 @@ namespace Vidly
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap_materia.css",
+                      "~/Content/bootstrap-cerulean.css",
                       "~/Content/site.css"));
         }
     }

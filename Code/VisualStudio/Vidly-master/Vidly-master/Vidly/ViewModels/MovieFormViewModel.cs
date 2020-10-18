@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Vidly.Models;
+using WebAppltiction8.Models;
 
-namespace Vidly.ViewModels
+namespace WebAppltiction8.ViewModels
 {
     public class MovieFormViewModel
     {
