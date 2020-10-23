@@ -31,35 +31,6 @@ namespace WebApplication8.Controllers
 
             return View(customers);
 
-
-            /*
-            var product = new Product() { Name = "Product 1" };
-            var customers = new List<Customer>()
-            {
-                new Customer(){Name = "Customer 1"} ,
-                new Customer(){Name = "Customer 2"}
-            };
-
-            var viewModel = new RandomProductModel()
-            {
-                Product = product,
-                Customers = customers
-            };
-
-            var customers = GetCustomers().ToList();
-
-             */
-
-            //if (customers == null)
-            //{
-            //    return HttpNotFound();
-            //}
-
-            //RandomProductModel model = new RandomProductModel()
-            //{
-            //    Customers = customers
-            //};
-
         }
 
         public ActionResult New()
@@ -74,14 +45,33 @@ namespace WebApplication8.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new NewCustomerViewModel
+                {
+                    Customer = customer,
+                    MemberShipTypeses = _context.MemberShipTypeses.ToList()
+                };
+                return View("CustomerForm", viewModel);
+            }
+            if (customer.Id == 0)
+                _context.Customers.Add(customer);
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
 
-            _context.Customers.Add(customer);
+                customerInDb.Name = customer.Name;
+                customerInDb.Birthdate = customer.Birthdate;
+                customerInDb.MemberShipTypeId = customer.MemberShipTypeId;
+                customerInDb.IsSubscribedToNewLetter = customer.IsSubscribedToNewLetter;
+            }
+
             _context.SaveChanges();
 
-
-            return RedirectToAction("IndexLest", "Product");
+            return RedirectToAction("Index", "Customers");
         }
 
       
