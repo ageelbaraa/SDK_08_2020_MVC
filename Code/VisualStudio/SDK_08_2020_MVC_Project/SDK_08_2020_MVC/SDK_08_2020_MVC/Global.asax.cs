@@ -6,9 +6,9 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Vidly;
+using SDK_08_2020_MVC;
 
-namespace WebAppltiction8
+namespace SDK_08_2020_MVC
 {
     public class MvcApplication : System.Web.HttpApplication
     {
