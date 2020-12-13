@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(WebAppltiction8.Startup))]
-namespace WebAppltiction8
+[assembly: OwinStartupAttribute(typeof(SDK_08_2020_MVC.Startup))]
+namespace SDK_08_2020_MVC
 {
     public partial class Startup
     {

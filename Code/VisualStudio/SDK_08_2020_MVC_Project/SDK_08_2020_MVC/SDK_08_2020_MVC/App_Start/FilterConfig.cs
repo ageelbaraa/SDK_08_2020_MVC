@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace WebAppltiction8
+namespace SDK_08_2020_MVC
 {
     public class FilterConfig
     {

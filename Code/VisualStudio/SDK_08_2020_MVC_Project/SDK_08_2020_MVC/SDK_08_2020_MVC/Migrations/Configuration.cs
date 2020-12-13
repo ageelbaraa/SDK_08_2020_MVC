@@ -1,6 +1,6 @@
-using WebAppltiction8.Models;
+using SDK_08_2020_MVC.Models;
 
-namespace WebAppltiction8.Migrations
+namespace SDK_08_2020_MVC.Migrations
 {
     using System;
     using System.Data.Entity;

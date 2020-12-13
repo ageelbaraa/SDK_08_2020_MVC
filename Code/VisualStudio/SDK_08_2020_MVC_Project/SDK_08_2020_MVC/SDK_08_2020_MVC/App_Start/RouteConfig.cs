@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace WebAppltiction8
+namespace SDK_08_2020_MVC
 {
     public class RouteConfig
     {

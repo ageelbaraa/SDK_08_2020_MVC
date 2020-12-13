@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using WebAppltiction8.Models;
+using SDK_08_2020_MVC.Models;
 
-namespace WebAppltiction8
+namespace SDK_08_2020_MVC
 {
     public partial class Startup
     {

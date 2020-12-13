@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebAppltiction8.Models;
+using SDK_08_2020_MVC.Models;
 
-namespace WebAppltiction8.ViewModels
+namespace SDK_08_2020_MVC.ViewModels
 {
     public class MovieFormViewModel
     {

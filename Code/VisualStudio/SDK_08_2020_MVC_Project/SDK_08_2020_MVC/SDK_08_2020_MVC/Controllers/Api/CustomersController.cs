@@ -4,9 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using WebAppltiction8.Models;
+using SDK_08_2020_MVC.Models;
 
-namespace Vidly.Controllers.Api
+namespace SDK_08_2020_MVC.Controllers.Api
 {
     public class CustomersController : ApiController
     {

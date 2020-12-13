@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using WebAppltiction8.Models;
+using SDK_08_2020_MVC.Models;
 
-namespace WebAppltiction8.Controllers
+namespace SDK_08_2020_MVC.Controllers
 {
     [Authorize]
     public class ManageController : Controller

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace WebAppltiction8
+namespace SDK_08_2020_MVC
 {
     public class BundleConfig
     {

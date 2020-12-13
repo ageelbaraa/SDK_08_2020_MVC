@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
-using WebAppltiction8.Models;
-using WebAppltiction8.ViewModels;
+using SDK_08_2020_MVC.Models;
+using SDK_08_2020_MVC.ViewModels;
 
-namespace WebAppltiction8.Controllers
+namespace SDK_08_2020_MVC.Controllers
 {
     public class MoviesController : Controller
     {

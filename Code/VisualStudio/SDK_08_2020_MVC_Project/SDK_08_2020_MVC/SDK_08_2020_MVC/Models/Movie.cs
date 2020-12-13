@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace WebAppltiction8.Models
+namespace SDK_08_2020_MVC.Models
 {
     public class Movie
     {
